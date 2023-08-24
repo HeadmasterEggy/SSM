@@ -1,2 +1,9 @@
-package com.example;public class we {
+package com.example;
+
+public class DefaultServiceLocator {
+    private static ClientServiceImpl clientService = new ClientServiceImpl();
+
+    public ClientServiceImpl createClientServiceInstance() {
+        return clientService;
+    }
 }

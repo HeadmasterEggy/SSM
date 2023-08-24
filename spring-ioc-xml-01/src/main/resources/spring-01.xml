@@ -3,4 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="main1" class="com.example.Main"/>
+
+    <bean id="main2" class="com.example.Main"/>
+
+    <!--静态工厂方法-->
+    <bean id="clientService" class="com.example.ClientService" factory-method="createInstance"/>
+
+    <!--非静态工厂方法-->
+    <bean id="defaultServiceLocator" class="com.example.DefaultServiceLocator" />
+
+    <bean id="clientService2" factory-bean="defaultServiceLocator" factory-method="createClientServiceInstance"/>
 </beans>

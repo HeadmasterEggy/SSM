@@ -1,2 +1,4 @@
-package com.example;public class ClientServiceImpl {
+package com.example;
+
+public class ClientServiceImpl {
 }
