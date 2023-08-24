@@ -1,4 +1,4 @@
-package com.example;
+package com.example.ioc01;
 
 public class DefaultServiceLocator {
     private static ClientServiceImpl clientService = new ClientServiceImpl();

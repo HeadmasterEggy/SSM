@@ -1,4 +1,4 @@
-package com.example;
+package com.example.ioc01;
 
 public class ClientServiceImpl {
 }
