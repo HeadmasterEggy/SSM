@@ -3,15 +3,45 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userService1" class="com.example.ioc02.UserService">
+    <bean id="userService" class="com.example.ioc02.UserService">
         <constructor-arg ref="userDao"/>
     </bean>
 
     <bean id="userDao" class="com.example.ioc02.UserDao"/>
 
-    <bean id="userService2" class="com.example.ioc02.UserService">
+    <bean id="userService1" class="com.example.ioc02.UserService">
+        <!--按构造参数的顺序填写值-->
         <constructor-arg value="20"/>
         <constructor-arg value="Joey"/>
         <constructor-arg value="userDao"/>
     </bean>
+
+    <bean id="userService2" class="com.example.ioc02.UserService">
+        <!--不考虑顺序-->
+        <constructor-arg name="name" value="Eggy"/>
+        <constructor-arg name="age" value="20"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>
+
+    <bean id="userService3" class="com.example.ioc02.UserService">
+        <!--按index下标填写，不考虑顺序-->
+        <constructor-arg index="1" value="Eggy"/>
+        <constructor-arg index="0" value="20"/>
+        <constructor-arg index="2" ref="userDao"/>
+    </bean>
+
+    <bean id="simpleMovieLister" class="com.example.ioc02.SimpleMovieLister">
+        <!-- setter方法，注入movieFinder对象的标识id
+             name = 属性名  ref = 引用bean的id值
+         -->
+        <property name="movieFinder" ref="movieFinder"/>
+
+        <!-- setter方法，注入基本数据类型movieName
+             name = 属性名 value= 基本类型值
+         -->
+        <property name="movieName" value="消失的她"/>
+    </bean>
+
+    <bean id="movieFinder" class="com.example.ioc02.MovieFinder"/>
+
 </beans>
