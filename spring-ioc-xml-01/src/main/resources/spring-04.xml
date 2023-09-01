@@ -4,4 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="javaBean" class="com.example.ioc04.JavaBean" init-method="init" destroy-method="clear"/>
+
+    <bean id="javaBean2" class="com.example.ioc04.JavaBean2" scope="prototype"/>
 </beans>

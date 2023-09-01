@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.ioc03.Main;
+import com.example.ioc04.JavaBean2;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -39,6 +40,10 @@ public class Test01 {
     public void test04() {
         //创建ioc容器进行实例化 -> init
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-04.xml");
+
+        JavaBean2 bean = applicationContext.getBean(JavaBean2.class);
+        JavaBean2 bean1 = applicationContext.getBean(JavaBean2.class);
+        System.out.println(bean1 == bean);
 
         //正常结束ioc容器 -> destroy
         applicationContext.close();
