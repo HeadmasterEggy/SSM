@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        id -> getObject()返回的对象标识
+        Class -> factoryBean标准化工厂类
+    -->
+    <bean id="javaBean" class="com.example.ioc05.JavaBeanFactoryBean">
+        <!--此property的属性: JavaBean工厂类配置 不是getObject()-->
+        <property name="value" value="dude"/>
+    </bean>
+</beans>
